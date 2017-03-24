@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   newName: string = '';
   errorMessage: string;
-  names: any[] = [];
+  people: People[] = [];
 
   /**
    * Creates an instance of the HomeComponent with the injected
@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   getNames() {
     this.nameListService.get()
       .subscribe(
-        names => this.names = names,
+        names => this.people = this.people.concat(names),
         error => this.errorMessage = <any>error
       );
   }
@@ -48,9 +48,18 @@ export class HomeComponent implements OnInit {
    */
   addName(): boolean {
     // TODO: implement nameListService.post
-    this.names.push(this.newName);
+    console.log(this.newName);
+
+    this.people.push( new People(this.newName, 20) );
+    console.log(this.people);
     this.newName = '';
     return false;
   }
 
+}
+
+export class People {
+  // name: string;
+  // age: number;
+  constructor(public name: string,public age: number){ }
 }

@@ -1,6 +1,8 @@
 import { join } from 'path';
 
 import { SeedConfig } from './seed.config';
+
+const proxy = require('proxy-middleware');
 // import { ExtendPackages } from './seed.config.interfaces';
 
 /**
@@ -42,9 +44,15 @@ export class ProjectConfig extends SeedConfig {
     // this.addPackagesBundles(additionalPackages);
 
     /* Add proxy middleware */
-    // this.PROXY_MIDDLEWARE = [
-    //   require('http-proxy-middleware')({ ws: false, target: 'http://localhost:3003' })
-    // ];
+    this.PROXY_MIDDLEWARE = [
+        proxy({
+          protocol: 'http:',
+          hostname: 'localhost',
+          port: 8000,
+          pathname: '/api',
+          route: '/api'
+        }),      
+    ];
 
     /* Add to or override NPM module configurations: */
     // this.PLUGIN_CONFIGS['browser-sync'] = { ghostMode: false };
