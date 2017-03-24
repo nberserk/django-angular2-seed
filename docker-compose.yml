@@ -1,0 +1,25 @@
+version: '2'
+services:
+  # you can enable
+  # db:
+  #   container_name: rdb
+  #   image: postgres:9.4.6
+  #   environment:
+  #     - POSTGRES_USER=django
+  #     - POSTGRES_PASSWORD=django
+  #   ports:
+  #     - "5432:5432"
+  web:
+    container_name: web
+    build:
+      context: .
+      args:
+        - http_proxy
+        - https_proxy
+    image: dj
+    command: ["supervisord", "-n"]
+    ports:
+      - "80:80"
+    # links:
+    #   - rdb
+

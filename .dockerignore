@@ -1,0 +1,25 @@
+.git
+
+#django
+django/media
+django/static
+django/backup
+django/db.sqlite3
+django/venv
+django/tool
+django/sql
+django/.idea
+
+
+# dependencies
+angular-seed/node_modules
+angular-seed/bower_components
+angular-seed/.vscode
+angular-seed/dist
+
+# e2e
+#e2e/*.js
+#e2e/*.map
+
+.DS_Store
+Thumbs.db
