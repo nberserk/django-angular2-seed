@@ -1,0 +1,10 @@
+*.DS_Store
+*.pyc
+.idea/
+/static
+venv
+bower_components/
+media/
+dev/static/jsstl/
+db.sqlite3
+
