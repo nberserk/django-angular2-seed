@@ -10,19 +10,13 @@ services:
   #   ports:
   #     - "5432:5432"
   web:
-    container_name: web
+    container_name: aw
     build:
       context: .
-      args:
-        - http_proxy
-        - https_proxy
-    image: nginx-dj
+    image: angular-web
     command: ["supervisord", "-n"]
     ports:
       - "80:80"
-    # volumes:
-    #   - ./angular-seed:/code/angular-seed
-    #   - ./api:/code/api      
     # links:
     #   - rdb
 

@@ -1,14 +1,14 @@
 .git
 
 #django
-django/media
-django/static
-django/backup
-django/db.sqlite3
-django/venv
-django/tool
-django/sql
-django/.idea
+api/media
+api/static
+api/backup
+api/db.sqlite3
+api/venv
+api/tool
+api/sql
+api/.idea
 
 
 # dependencies
