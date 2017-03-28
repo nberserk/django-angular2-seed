@@ -12,29 +12,41 @@ $ cd django-angular2-seed
 
 ### dev setup
 
-##### Django rest
+for development setup, follow following setps:
 
-```
+
+```bash
+# run Django rest framework
 $ cd api
 $ pip install -r requirements
 $ ./manage.py runserver
-```
 
-check this url: http://localhost:8000
-
-
-##### Angular2
-
-```
-$ cd angular-seed
+# run Angular2 app
+$ cd ../angular-seed
 $ npm install # first time only
 $ npm start
+
 ```
 
-check this url:  http://localhost:5555
+check this url for django api server : http://localhost:8000
+
+check this url for angular2 app :  http://localhost:5555
+
+
 
 
 ### prod setup
+
+Are you ready to ship your app? then you can deploy your app using docker image easily.
+
+```bash
+$ cd django-angular2-seed
+$ docker-compose build
+$ 
+
+```
+
+now your docker image is 
 
 
 

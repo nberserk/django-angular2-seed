@@ -16,10 +16,13 @@ services:
       args:
         - http_proxy
         - https_proxy
-    image: dj
+    image: nginx-dj
     command: ["supervisord", "-n"]
     ports:
       - "80:80"
+    # volumes:
+    #   - ./angular-seed:/code/angular-seed
+    #   - ./api:/code/api      
     # links:
     #   - rdb
 

@@ -6,8 +6,7 @@ copy . /code
 
 # angular
 WORKDIR /code/angular-seed
-#run echo $http_proxy
-run && npm install && npm run build.prod \
+run npm install && npm run build.prod \
     && rm -rf node_modules
 
 # django
