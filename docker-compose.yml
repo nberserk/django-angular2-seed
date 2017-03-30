@@ -10,10 +10,10 @@ services:
   #   ports:
   #     - "5432:5432"
   web:
-    container_name: aw
+    container_name: web
     build:
       context: .
-    image: angular-web
+    image: nberserk/django-angular2-seed
     command: ["supervisord", "-n"]
     ports:
       - "80:80"

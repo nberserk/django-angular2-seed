@@ -35,18 +35,22 @@ check this url for angular2 app :  http://localhost:5555
 
 
 
-### prod setup
+### Dockerization
 
-Are you ready to ship your app? then you can deploy your app using docker image easily.
+Are you ready to deploy your app? then you can deploy your app using docker image.
 
 ```bash
 $ cd django-angular2-seed
-$ docker-compose build
-$ 
+$ docker-compose build --pull
+$ docker-compose up -d
+$ docker exec web ./manage.py migrate
+
+# then access to http://localhost:80/api/people , and add some peoples.
+# then access to http://localhost:80 , then you can see added people list there.
 
 ```
 
-now your docker image is 
+now your docker image is running locally. check http://localhost:80
 
 
 
